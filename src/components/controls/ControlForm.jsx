@@ -1,6 +1,13 @@
 import React from 'react';
 
-const ControlForm = ({ urlValue, handleURLChange, handleMethod, handleResponse }) => {
+const ControlForm = ({
+  urlValue,
+  handleURLChange,
+  handleMethod,
+  bodyValue,
+  handleBodyValueChange
+}) => {
+
   return (
     <form>
       <label>URL:</label>
@@ -18,7 +25,7 @@ const ControlForm = ({ urlValue, handleURLChange, handleMethod, handleResponse }
       <button value='PATCH' onClick={handleMethod}>Patch</button>
       <button value='DELETE' onClick={handleMethod}>DELETE</button>
       <br />
-      <textarea type='text' placeholder='Raw JSON Body' onChange={handleResponse} />
+      <textarea value={bodyValue} type='text' placeholder='Raw JSON Body' onChange={handleBodyValueChange} />
     </form>
   );
 };

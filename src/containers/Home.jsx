@@ -5,17 +5,21 @@ import Response from '../components/controls/Response';
 export default class Home extends Component {
   state = {
     urlValue: '',
-    method: 'POST'
+    method: 'POST',
+    bodyValue: ''
   }
 
   handleURLChange = ({ target }) => {
-    this.setState({ urlValue: target.value })
+    this.setState({ urlValue: target.value });
   };
 
   handleMethod = (e) => {
     e.preventDefault();
-    this.setState({ method: e.target.value })
-    console.log(this.state);
+    this.setState({ method: e.target.value });
+  };
+
+  handleBodyValueChange = ({ target }) => {
+    this.setState({ bodyValue: target.value });
   };
 
   render() {
@@ -27,7 +31,10 @@ export default class Home extends Component {
         <ControlForm
           urlValue={this.state.urlValue}
           handleURLChange={this.handleURLChange}
-          handleMethod={this.handleMethod} />
+          handleMethod={this.handleMethod}
+          bodyValue={this.state.bodyValue}
+          handleBodyValueChange={this.handleBodyValueChange}
+        />
         <Response />
       </>
     );
