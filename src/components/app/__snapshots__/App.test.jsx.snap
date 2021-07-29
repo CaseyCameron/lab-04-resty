@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App 1`] = `
+<DocumentFragment>
+  <header
+    class="test"
+  >
+    <h1>
+      RESTless
+    </h1>
+  </header>
+</DocumentFragment>
+`;
