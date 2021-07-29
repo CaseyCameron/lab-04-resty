@@ -6,7 +6,8 @@ export default class Home extends Component {
   state = {
     urlValue: '',
     method: 'POST',
-    bodyValue: ''
+    bodyValue: '',
+    response: '',
   }
 
   handleURLChange = ({ target }) => {
@@ -41,7 +42,7 @@ export default class Home extends Component {
           handleBodyValueChange={this.handleBodyValueChange}
           handleSubmit={this.handleSubmit}
         />
-        <Response />
+        <Response response={this.state.response} />
       </>
     );
   }
