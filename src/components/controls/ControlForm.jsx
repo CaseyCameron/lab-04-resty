@@ -5,11 +5,12 @@ const ControlForm = ({
   handleURLChange,
   handleMethod,
   bodyValue,
-  handleBodyValueChange
+  handleBodyValueChange,
+  handleSubmit
 }) => {
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>URL:</label>
       <input
         value={urlValue}

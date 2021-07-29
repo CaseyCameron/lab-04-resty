@@ -22,6 +22,11 @@ export default class Home extends Component {
     this.setState({ bodyValue: target.value });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Success');
+  }
+
   render() {
     return (
       <>
@@ -34,6 +39,7 @@ export default class Home extends Component {
           handleMethod={this.handleMethod}
           bodyValue={this.state.bodyValue}
           handleBodyValueChange={this.handleBodyValueChange}
+          handleSubmit={this.handleSubmit}
         />
         <Response />
       </>
