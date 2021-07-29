@@ -4,8 +4,13 @@ import Response from '../components/controls/Response';
 
 export default class Home extends Component {
   state = {
+    urlValue: '',
     method: 'POST'
   }
+
+  handleURLChange = ({ target }) => {
+    this.setState({ urlValue: target.value })
+  };
 
   handleMethod = (e) => {
     e.preventDefault();
@@ -19,7 +24,10 @@ export default class Home extends Component {
         <header className="test">
           <h1>RESTless</h1>
         </header>
-        <ControlForm handleMethod={this.handleMethod} />
+        <ControlForm
+          urlValue={this.state.urlValue}
+          handleURLChange={this.handleURLChange}
+          handleMethod={this.handleMethod} />
         <Response />
       </>
     );
