@@ -18,7 +18,7 @@ const ControlForm = () => {
       <br />
       <textarea type='text' placeholder='Raw JSON Body' />
     </form>
-  )
+  );
 };
 
 export default ControlForm;
