@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ControlForm = (handleMethod) => {
+const ControlForm = ({ handleMethod }) => {
   return (
     <form>
       <label>URL:</label>

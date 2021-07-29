@@ -4,11 +4,13 @@ import Response from '../components/controls/Response';
 
 export default class Home extends Component {
   state = {
-    method: 'GET'
+    method: 'POST'
   }
 
-  handleMethod = ({ target }) => {
-    console.log({ target });
+  handleMethod = (e) => {
+    e.preventDefault();
+    this.setState({ method: e.target.value })
+    console.log(this.state);
   };
 
   render() {
