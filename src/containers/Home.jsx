@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ControlForm from '../components/controls/ControlForm';
-import History from '../components/controls/History';
+import HistoryList from '../components/controls/HistoryList';
 import { request } from '../services/Request';
 import Response from '../components/controls/Response';
 
@@ -10,6 +10,10 @@ export default class Home extends Component {
     method: 'GET',
     bodyValue: '',
     response: '',
+    history: [{
+      method: 'GET',
+      urlValue: 'urlValue'
+    }],
   }
 
   handleURLChange = ({ target }) => {
@@ -28,8 +32,17 @@ export default class Home extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const response = await request(this.state.method, this.state.urlValue, this.state.bodyValue);
-    console.log(response);
+    console.log('response', response);
     this.setState({ response: response });
+
+    const request = {
+      method: this.state.method,
+      urlValue: this.state.urlValue
+    }
+
+    const newHistory = [...this.state.history, request];
+    console.log('new history', newHistory);
+    this.setState({ history: { newHistory } });
   }
 
   render() {
@@ -47,7 +60,7 @@ export default class Home extends Component {
           handleSubmit={this.handleSubmit}
         />
         <Response response={this.state.response} />
-        <History />
+        <HistoryList history={this.state.history} />
       </>
     );
   }
