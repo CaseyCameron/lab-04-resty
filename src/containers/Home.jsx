@@ -37,7 +37,6 @@ export default class Home extends Component {
     }
 
     const requestHistory = [...this.state.history, requestHistoryItem];
-    console.log('new history', requestHistory);
     this.setState({ history: requestHistory });
   }
 
