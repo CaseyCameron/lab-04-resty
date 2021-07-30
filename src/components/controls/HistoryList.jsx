@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 const HistoryList = ({ history }) => {
   const historyElements = history.map((element, index) => (
-    <li key={index}>
+    <li key={index} data-testid='history-id'>
       <History {...element} />
     </li>
   ));
-  return <ul>{historyElements}</ul>
+  return <ul aria-label='history-items'>{historyElements}</ul>
 };
 
 HistoryList.propTypes = {
