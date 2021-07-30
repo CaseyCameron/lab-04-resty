@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ControlForm from '../components/controls/ControlForm';
+import History from '../components/controls/History';
 import { request } from '../services/Request';
 import Response from '../components/controls/Response';
 
@@ -46,6 +47,7 @@ export default class Home extends Component {
           handleSubmit={this.handleSubmit}
         />
         <Response response={this.state.response} />
+        <History />
       </>
     );
   }

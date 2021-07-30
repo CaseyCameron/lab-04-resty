@@ -21,26 +21,11 @@ const ControlForm = ({
       />
       <button name='submit'>Go!</button>
       <br />
-      <label>
-        <input type='radio' value='GET' onChange={handleMethod} />
-        <span>GET</span>
-      </label>
-      <label>
-        <input type='radio' value='POST' onChange={handleMethod} />
-        <span>POST</span>
-      </label>
-      <label>
-        <input type='radio' value='PUT' onChange={handleMethod} />
-        <span>PUT</span>
-      </label>
-      <label>
-        <input type='radio' value='PATCH' onChange={handleMethod} />
-        <span>PATCH</span>
-      </label>
-      <label>
-        <input type='radio' value='DELETE' onChange={handleMethod} />
-        <span>DELETE</span>
-      </label>
+      <button value='GET' onClick={handleMethod}>GET</button>
+      <button value='POST' onClick={handleMethod}>POST</button>
+      <button value='PUT' onClick={handleMethod}>PUT</button>
+      <button value='PATCH' onClick={handleMethod}>Patch</button>
+      <button value='DELETE' onClick={handleMethod}>DELETE</button>
       <br />
       <textarea value={bodyValue} type='text' placeholder='Raw JSON Body' onChange={handleBodyValueChange} />
     </form>
