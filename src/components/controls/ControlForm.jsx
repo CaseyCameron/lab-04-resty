@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ControlForm = ({
   urlValue,
@@ -30,6 +31,15 @@ const ControlForm = ({
       <textarea value={bodyValue} type='text' placeholder='Raw JSON Body' onChange={handleBodyValueChange} />
     </form>
   );
+};
+
+ControlForm.propTypes = {
+  urlValue: PropTypes.string.isRequired,
+  handleURLChange: PropTypes.func.isRequired,
+  handleMethod: PropTypes.func.isRequired,
+  bodyValue: PropTypes.string.isRequired,
+  handleBodyValueChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default ControlForm;

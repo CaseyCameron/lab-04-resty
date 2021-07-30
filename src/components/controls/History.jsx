@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const History = ({ method, urlValue }) => {
   return (
@@ -9,6 +10,11 @@ const History = ({ method, urlValue }) => {
       </figcaption>
     </figure>
   )
+};
+
+History.propTypes = {
+  method: PropTypes.string.isRequired,
+  urlValue: PropTypes.string.isRequired,
 };
 
 export default History;

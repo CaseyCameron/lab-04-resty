@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Response = ({ response }) => {
   return (
@@ -9,5 +10,9 @@ const Response = ({ response }) => {
     </pre>
   );
 };
+
+Response.propTypes = {
+  response: PropTypes.any.isRequired,
+}
 
 export default Response;
