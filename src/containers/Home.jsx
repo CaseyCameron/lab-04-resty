@@ -10,10 +10,7 @@ export default class Home extends Component {
     method: 'GET',
     bodyValue: '',
     response: '',
-    history: [{
-      method: 'GET',
-      urlValue: 'urlValue'
-    }],
+    history: [],
   }
 
   handleURLChange = ({ target }) => {
@@ -32,17 +29,16 @@ export default class Home extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const response = await request(this.state.method, this.state.urlValue, this.state.bodyValue);
-    console.log('response', response);
     this.setState({ response: response });
 
-    const request = {
+    const requestHistoryItem = {
       method: this.state.method,
       urlValue: this.state.urlValue
     }
 
-    const newHistory = [...this.state.history, request];
-    console.log('new history', newHistory);
-    this.setState({ history: { newHistory } });
+    const requestHistory = [...this.state.history, requestHistoryItem];
+    console.log('new history', requestHistory);
+    this.setState({ history: requestHistory });
   }
 
   render() {
@@ -59,8 +55,8 @@ export default class Home extends Component {
           handleBodyValueChange={this.handleBodyValueChange}
           handleSubmit={this.handleSubmit}
         />
-        <Response response={this.state.response} />
-        <HistoryList history={this.state.history} />
+        {this.state.response !== '' && <Response response={this.state.response} />}
+        {this.state.history.length > 0 && <HistoryList history={this.state.history} />}
       </>
     );
   }
