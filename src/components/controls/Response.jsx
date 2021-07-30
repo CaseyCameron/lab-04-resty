@@ -2,9 +2,11 @@ import React from 'react';
 
 const Response = ({ response }) => {
   return (
-    <textarea>
-      Your JSON response here
-    </textarea>
+    <pre>
+      <code className="prettyprint" placeholder='Your JSON response here'>
+        {JSON.stringify(response, null, 4)}
+      </code>
+    </pre>
   );
 };
 

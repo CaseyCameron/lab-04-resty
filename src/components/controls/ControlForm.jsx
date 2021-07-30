@@ -11,6 +11,7 @@ const ControlForm = ({
 
   return (
     <form onSubmit={handleSubmit}>
+      <p>https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8</p>
       <label>URL:</label>
       <input
         value={urlValue}
@@ -18,13 +19,28 @@ const ControlForm = ({
         placeholder='URL'
         onChange={handleURLChange}
       />
-      <button>Go!</button>
+      <button name='submit'>Go!</button>
       <br />
-      <button value='GET' onClick={handleMethod}>GET</button>
-      <button value='POST' onClick={handleMethod}>POST</button>
-      <button value='PUT' onClick={handleMethod}>PUT</button>
-      <button value='PATCH' onClick={handleMethod}>Patch</button>
-      <button value='DELETE' onClick={handleMethod}>DELETE</button>
+      <label>
+        <input type='radio' value='GET' onChange={handleMethod} />
+        <span>GET</span>
+      </label>
+      <label>
+        <input type='radio' value='POST' onChange={handleMethod} />
+        <span>POST</span>
+      </label>
+      <label>
+        <input type='radio' value='PUT' onChange={handleMethod} />
+        <span>PUT</span>
+      </label>
+      <label>
+        <input type='radio' value='PATCH' onChange={handleMethod} />
+        <span>PATCH</span>
+      </label>
+      <label>
+        <input type='radio' value='DELETE' onChange={handleMethod} />
+        <span>DELETE</span>
+      </label>
       <br />
       <textarea value={bodyValue} type='text' placeholder='Raw JSON Body' onChange={handleBodyValueChange} />
     </form>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import ControlForm from '../components/controls/ControlForm';
+import { request } from '../services/Request';
 import Response from '../components/controls/Response';
 
 export default class Home extends Component {
   state = {
     urlValue: '',
-    method: 'POST',
+    method: 'GET',
     bodyValue: '',
     response: '',
   }
@@ -23,9 +24,11 @@ export default class Home extends Component {
     this.setState({ bodyValue: target.value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Success');
+    const response = await request(this.state.method, this.state.urlValue, this.state.bodyValue);
+    console.log(response);
+    this.setState({ response: response });
   }
 
   render() {
