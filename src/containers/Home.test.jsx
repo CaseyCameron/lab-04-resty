@@ -1,36 +1,28 @@
 import React from 'react';
 import Home from './Home';
-import { render, screen, cleanup, fireEvent } from '@testing-library/react';
+import { render, screen, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import ControlForm from '../components/controls/ControlForm';
+import userEvent from '@testing-library/user-event';
 
 describe('Home page render', () => {
   afterEach(() => cleanup());
 
-  it('Renders the home page', () => {
-    // const urlValue = ({ target }) => {
-    //   this.setState({ urlValue: target.value });
-    // };
+  it('Renders the home page', async () => {
+    render(<Home />);
+    const urlInput = screen.getByPlaceholderText('URL');
+    const methodButton = screen.getByDisplayValue('GET');
+    const submitButton = screen.getByText('Go!');
 
-    // const methodValue = (e) => {
-    //   this.setState({ method: e.target.value });
-    // };
+    //user types in url input
+    userEvent.type(urlInput, 'https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8');
+    //user event is next a click on the method radio button
+    userEvent.click(methodButton);
+    //user clicks the submit button
+    userEvent.click(submitButton);
 
-    // const bodyValue = ({ target }) => {
-    //   this.setState({ bodyValue: target.value });
-    // };
-
-    // render(<Home />);
-
-    // screen.getByText('RESTless');
-    const { queryByPlaceholderText } = render(<ControlForm
-    // urlValue={urlValue}
-    // method={methodValue}
-    // body={bodyValue}
-    />);
-
-    const searchInput = queryByPlaceholderText('URL');
-    fireEvent.change(searchInput, { target: { value: 'http://www.w.com' } });
-    expect(searchInput).toHaveValue('http://www.w.com');
-
+    return await waitFor(() => {
+      const response = screen.getByTestId('responseBody');
+      expect(response).toBeInTheDocument();
+    }, 5000);
   });
 });
