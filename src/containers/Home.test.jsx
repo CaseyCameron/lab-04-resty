@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './Home';
 import { render, screen, cleanup, fireEvent, waitFor } from '@testing-library/react';
-import ControlForm from '../components/controls/ControlForm';
 import userEvent from '@testing-library/user-event';
 
 describe('Home page render', () => {

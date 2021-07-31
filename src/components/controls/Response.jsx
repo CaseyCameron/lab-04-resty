@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './Response.css';
 
 const Response = ({ response }) => {
   return (
-    <pre>
-      <code className="prettyprint" placeholder='Your JSON response here'>
-        {JSON.stringify(response, null, 4)}
-      </code>
-    </pre>
+    <section className={style.Response}>
+      <pre>
+        <code className="prettyprint" data-testid='responseBody'>
+          {JSON.stringify(response, null, 4)}
+        </code>
+      </pre>
+    </section>
   );
 };
 

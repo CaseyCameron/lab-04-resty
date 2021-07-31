@@ -1,6 +1,7 @@
 import React from 'react';
 import History from './History';
 import PropTypes from 'prop-types';
+import style from './HistoryList.css';
 
 const HistoryList = ({ history }) => {
   const historyElements = history.map((element, index) => (
@@ -8,7 +9,11 @@ const HistoryList = ({ history }) => {
       <History {...element} />
     </li>
   ));
-  return <ul aria-label='history-items'>{historyElements}</ul>
+  return (
+    <div className={style.HistoryList}>
+      <ul aria-label='history-items'>{historyElements}</ul>
+    </div>
+  );
 };
 
 HistoryList.propTypes = {

@@ -2,37 +2,41 @@
 
 exports[`Method History Container Displays a list of method history items 1`] = `
 <DocumentFragment>
-  <ul
-    aria-label="history-items"
+  <div
+    class="HistoryList"
   >
-    <li
-      data-testid="history-id"
+    <ul
+      aria-label="history-items"
     >
-      <figure>
-        <figcaption>
-          <p>
-            GET
-          </p>
-          <p>
-            https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
-          </p>
-        </figcaption>
-      </figure>
-    </li>
-    <li
-      data-testid="history-id"
-    >
-      <figure>
-        <figcaption>
-          <p>
-            POST
-          </p>
-          <p>
-            https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
-          </p>
-        </figcaption>
-      </figure>
-    </li>
-  </ul>
+      <li
+        data-testid="history-id"
+      >
+        <figure>
+          <figcaption>
+            <p>
+              GET
+            </p>
+            <p>
+              https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
+            </p>
+          </figcaption>
+        </figure>
+      </li>
+      <li
+        data-testid="history-id"
+      >
+        <figure>
+          <figcaption>
+            <p>
+              POST
+            </p>
+            <p>
+              https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
+            </p>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
 </DocumentFragment>
 `;
