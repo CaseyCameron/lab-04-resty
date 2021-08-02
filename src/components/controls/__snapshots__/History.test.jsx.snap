@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Method History component Displays a history element 1`] = `
+<DocumentFragment>
+  <p>
+    GET
+  </p>
+  <p>
+    https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
+  </p>
+</DocumentFragment>
+`;
