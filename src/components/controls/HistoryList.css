@@ -1,5 +1,6 @@
 .HistoryList {
   width: 17.5vw;
+  height: 100vh;
   margin: 2px;
   display: flex;
   flex-direction: column;

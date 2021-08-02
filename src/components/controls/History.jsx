@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 const History = ({ method, urlValue }) => {
   return (
-    <figure>
-      <figcaption>
-        <p>{method}</p>
-        <p>{urlValue}</p>
-      </figcaption>
-    </figure>
+    <>
+      <p>{method}</p>
+      <p>{urlValue}</p>
+    </>
   )
 };
 

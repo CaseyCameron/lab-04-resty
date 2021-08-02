@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component Renders the form 1`] = `
+<DocumentFragment>
+  <section>
+    <form
+      aria-label="api-form"
+      class="Form"
+    >
+      <p>
+        https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
+      </p>
+      <input
+        class="url"
+        placeholder="URL"
+        style="width: 120vh;"
+        type="text"
+        value=""
+      />
+      <br />
+      <section>
+        <input
+          name="method"
+          type="radio"
+          value="GET"
+        />
+        <label>
+          GET
+        </label>
+        <input
+          name="method"
+          type="radio"
+          value="POST"
+        />
+        <label>
+          POST
+        </label>
+        <input
+          name="method"
+          type="radio"
+          value="PUT"
+        />
+        <label>
+          PUT
+        </label>
+        <input
+          name="method"
+          type="radio"
+          value="PATCH"
+        />
+        <label>
+          PATCH
+        </label>
+        <input
+          name="method"
+          type="radio"
+          value="DELETE"
+        />
+        <label>
+          DELETE
+        </label>
+        <button
+          name="submit"
+        >
+          Go!
+        </button>
+      </section>
+      <br />
+      <textarea
+        placeholder="Raw JSON Body"
+        type="text"
+      />
+    </form>
+  </section>
+</DocumentFragment>
+`;

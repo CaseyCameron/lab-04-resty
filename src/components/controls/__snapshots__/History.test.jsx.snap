@@ -2,15 +2,11 @@
 
 exports[`Method History component Displays a history element 1`] = `
 <DocumentFragment>
-  <figure>
-    <figcaption>
-      <p>
-        GET
-      </p>
-      <p>
-        https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
-      </p>
-    </figcaption>
-  </figure>
+  <p>
+    GET
+  </p>
+  <p>
+    https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c8
+  </p>
 </DocumentFragment>
 `;

@@ -20,6 +20,7 @@ export default class Home extends Component {
 
   handleMethod = (e) => {
     this.setState({ method: e.target.value });
+    console.log(this.state.method);
   };
 
   handleBodyValueChange = ({ target }) => {
@@ -42,23 +43,26 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <header className={style.Header}>
           <h1>RESTless</h1>
         </header>
-        <ControlForm
-          urlValue={this.state.urlValue}
-          handleURLChange={this.handleURLChange}
-          method={this.state.method}
-          handleMethod={this.handleMethod}
-          bodyValue={this.state.bodyValue}
-          handleBodyValueChange={this.handleBodyValueChange}
-          handleSubmit={this.handleSubmit}
-        />
-        <Response response={this.state.response} />
-        {/* {this.state.response !== '' && <Response response={this.state.response} />} */}
-        {this.state.history.length > 0 && <HistoryList history={this.state.history} />}
-      </div>
+        <div className={style.Home}>
+          <HistoryList history={this.state.history} />
+          <div>
+            <ControlForm
+              urlValue={this.state.urlValue}
+              handleURLChange={this.handleURLChange}
+              method={this.state.method}
+              handleMethod={this.handleMethod}
+              bodyValue={this.state.bodyValue}
+              handleBodyValueChange={this.handleBodyValueChange}
+              handleSubmit={this.handleSubmit}
+            />
+            <Response response={this.state.response} />
+          </div>
+        </div>
+      </>
     );
   }
 }

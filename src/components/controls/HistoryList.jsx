@@ -10,9 +10,7 @@ const HistoryList = ({ history }) => {
     </li>
   ));
   return (
-    <div className={style.HistoryList}>
-      <ul aria-label='history-items'>{historyElements}</ul>
-    </div>
+    <ul className={style.HistoryList} aria-label='history-items'>{historyElements}</ul>
   );
 };
 
