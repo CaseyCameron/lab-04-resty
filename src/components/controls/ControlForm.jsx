@@ -26,16 +26,16 @@ const ControlForm = ({
         />
         <br />
         <section>
-          <input type='radio' name='method' value='GET' checked={method === 'GET'} onChange={handleMethod} />
-          <label>GET</label>
-          <input type='radio' name='method' value='POST' checked={method === 'POST'} onChange={handleMethod} />
-          <label>POST</label>
-          <input type='radio' name='method' value='PUT' checked={method === 'PUT'} onChange={handleMethod} />
-          <label>PUT</label>
-          <input type='radio' name='method' value='PATCH' checked={method === 'PATCH'} onChange={handleMethod} />
-          <label>PATCH</label>
-          <input type='radio' name='method' value='DELETE' checked={method === 'DELETE'} onChange={handleMethod} />
-          <label>DELETE</label>
+          <input type='radio' id='get' name='method' value='GET' checked={method === 'GET'} onChange={handleMethod} />
+          <label for='get'>GET</label>
+          <input type='radio' id='post' name='method' value='POST' checked={method === 'POST'} onChange={handleMethod} />
+          <label for='post'>POST</label>
+          <input type='radio' id='put' name='method' value='PUT' checked={method === 'PUT'} onChange={handleMethod} />
+          <label for='put'>PUT</label>
+          <input type='radio' id='patch' name='method' value='PATCH' checked={method === 'PATCH'} onChange={handleMethod} />
+          <label for='patch'>PATCH</label>
+          <input type='radio' id='delete' name='method' value='DELETE' checked={method === 'DELETE'} onChange={handleMethod} />
+          <label for='delete'>DELETE</label>
           <button name='submit'>Go!</button>
         </section>
         <br />

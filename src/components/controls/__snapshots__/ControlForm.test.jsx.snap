@@ -20,43 +20,58 @@ exports[`Form component Renders the form 1`] = `
       <br />
       <section>
         <input
+          id="get"
           name="method"
           type="radio"
           value="GET"
         />
-        <label>
+        <label
+          for="get"
+        >
           GET
         </label>
         <input
+          id="post"
           name="method"
           type="radio"
           value="POST"
         />
-        <label>
+        <label
+          for="post"
+        >
           POST
         </label>
         <input
+          id="put"
           name="method"
           type="radio"
           value="PUT"
         />
-        <label>
+        <label
+          for="put"
+        >
           PUT
         </label>
         <input
+          id="patch"
           name="method"
           type="radio"
           value="PATCH"
         />
-        <label>
+        <label
+          for="patch"
+        >
           PATCH
         </label>
         <input
+          id="delete"
           name="method"
           type="radio"
           value="DELETE"
         />
-        <label>
+        <label
+          for="delete"
+        >
           DELETE
         </label>
         <button

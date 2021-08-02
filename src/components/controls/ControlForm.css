@@ -15,12 +15,12 @@
   flex-direction: row;
 }
 
-/* .Form section input[type="radio"] {
+.Form section input[type="radio"] {
   display: flex;
   height: 0;
   width: 0;
   margin-left: 0;
-} */
+}
 
 .Form section label {
   padding: 4px 16px;
@@ -28,6 +28,7 @@
 }
 
 .Form section input[type="radio"]:checked + label {
+  display: hidden;
   background-color: #204060;
   color: white;
 }
